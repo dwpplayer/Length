@@ -4,8 +4,8 @@
  */
 public class Length {
     private final LengthUnit _unit;
-    private final int CentiMeter_Con_Factor = 1;
-    private final int Meter_Con_Factor = 100;
+
+    private LengthUnit lengthUnit;
 
     public Length(int n) {
         this(n, LengthUnit.Meter);
@@ -32,15 +32,7 @@ public class Length {
     }
 
     private int getAmountInBaseUnit() {
-        if (_unit == LengthUnit.Meter)
-        {
-            return _value * Meter_Con_Factor;
-        }
-        else if(_unit == LengthUnit.CentiMeter)
-        {
-            return _value * CentiMeter_Con_Factor;
-        }
-        return 0;
+        return _unit.getAmountInBaseUnit(_value);
     }
 
     @Override

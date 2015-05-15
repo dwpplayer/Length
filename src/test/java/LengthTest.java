@@ -50,4 +50,9 @@ public class LengthTest {
         assertEquals(new Length(2000, LengthUnit.CentiMeter), new Length(20, LengthUnit.Meter));
     }
 
+    @Test
+    public void should_be_equal_when_compare_two_lengths_with_different_logic_length(){
+        assertNotEquals(new Length(2001, LengthUnit.CentiMeter), new Length(20, LengthUnit.Meter));
+    }
+
 }
