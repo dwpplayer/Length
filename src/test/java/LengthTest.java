@@ -7,10 +7,6 @@ import static org.junit.Assert.assertNotEquals;
  * Created by twer on 5/15/15.
  */
 public class LengthTest {
-    @Test
-    public void should_be_equal_when_compare_two_lengths(){
-        assertEquals(new Length(0, LengthUnit.Meter), new Length(0, LengthUnit.Meter));
-    }
 
     @Test
     public void should_be_equal_when_compare_two_lenghts_with_same_value(){
@@ -38,11 +34,6 @@ public class LengthTest {
     public void should_not_be_equal_when_compare_two_lengths_with_same_values_and_different_unit()
     {
         assertNotEquals(new Length(5, LengthUnit.Meter), new Length(5, LengthUnit.CentiMeter));
-    }
-
-    @Test
-    public void should_be_equal_when_compare_two_lengths_with_same_logic_length_unit(){
-        assertEquals(new Length(100, LengthUnit.CentiMeter), new Length(1, LengthUnit.Meter));
     }
 
     @Test
