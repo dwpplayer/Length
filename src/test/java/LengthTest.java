@@ -9,17 +9,17 @@ import static org.junit.Assert.assertNotEquals;
 public class LengthTest {
     @Test
     public void should_be_equal_when_compare_two_lengths(){
-        assertEquals(new Length(), new Length());
+        assertEquals(new Length(0, LengthUnit.Meter), new Length(0, LengthUnit.Meter));
     }
 
     @Test
     public void should_be_equal_when_compare_two_lenghts_with_same_value(){
-        assertEquals(new Length(3), new Length(3));
+        assertEquals(new Length(3, LengthUnit.Meter), new Length(3, LengthUnit.Meter));
     }
 
     @Test
     public void should_not_be_equal_when_compare_two_lengths_with_different_values(){
-        assertNotEquals(new Length(2), new Length(1));
+        assertNotEquals(new Length(2, LengthUnit.Meter), new Length(1, LengthUnit.Meter));
     }
 
     @Test

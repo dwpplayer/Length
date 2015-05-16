@@ -1,18 +1,19 @@
 public class LengthUnit {
-    private static final int CentiMeter_Con_Factor = 1;
-    private static final int Meter_Con_Factor = 100;
 
-    private int _convert_Factor = 0;
-
-
-    public LengthUnit(int convert_Factor) {
+    private LengthUnit(int convert_Factor) {
         _convert_Factor = convert_Factor;
     }
+
 
     int getAmountInBaseUnit(int amount) {
         return amount * _convert_Factor;
     }
 
-    public static LengthUnit Meter = new LengthUnit(Meter_Con_Factor);
-    public static LengthUnit CentiMeter = new LengthUnit(CentiMeter_Con_Factor);
+    private int _convert_Factor;
+
+    public static final int CONVERT_FACTOR_CENTIMETER = 1;
+    public static final int CONVERT_FACTOR_METER = 100 * CONVERT_FACTOR_CENTIMETER;
+
+    public static LengthUnit Meter = new LengthUnit(CONVERT_FACTOR_METER);
+    public static LengthUnit CentiMeter = new LengthUnit(CONVERT_FACTOR_CENTIMETER);
 }
